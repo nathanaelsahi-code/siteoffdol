@@ -218,11 +218,17 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
 
-        // Close mobile menu when a navigation link is clicked
+        // Close mobile menu when a FINAL destination link is clicked
         if (navLinks.length > 0 && mainNav) {
             navLinks.forEach(link => {
                 link.addEventListener('click', () => {
-                    // Only close if the menu is actually open
+                    // Check if the clicked link is a dropdown toggle on mobile
+                    const isDropdownToggle = link.classList.contains('dropbtn');
+                    if (isDropdownToggle && window.innerWidth <= 768) {
+                        return; // Stop here, let the other listener handle the toggle
+                    }
+
+                    // For all other links, close the main nav panel
                     if (mainNav.classList.contains('nav-active')) {
                         mainNav.classList.remove('nav-active');
 
