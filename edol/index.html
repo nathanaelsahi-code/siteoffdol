@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>District Olave</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo-container">
+                <img src="logodol.jpg" alt="Logo du District Olave" class="logo">
+                <h1>District Olave</h1>
+            </a>
+            <nav>
+                <ul>
+                    <li class="dropdown">
+                        <a href="administration.html" class="dropbtn">Administration Generale</a>
+                        <div class="dropdown-content">
+                            <a href="administration.html#organigramme">Organigramme</a>
+                            <a href="administration.html#denombrement">Denombrement</a>
+                        </div>
+                    </li>
+                    <li><a href="actualites.html">Actualités</a></li>
+                    <li class="dropdown">
+                        <a href="documentation.html" class="dropbtn">Documentation</a>
+                        <div class="dropdown-content">
+                            <a href="documentation.html#archives">Archives</a>
+                            <a href="documentation.html#stages">Stages</a>
+                            <a href="documentation.html#autres-docs">Autres Docs</a>
+                        </div>
+                    </li>
+                    <li><a href="boutique.html">Boutique (edol)</a></li>
+                    <li><a href="rep.html">REP</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero">
+            <div class="container">
+                <h2>Bienvenue sur le site du District Olave !</h2>
+                <p>Faisons le scoutisme autrement!</p>
+            </div>
+        </section>
+
+        <section id="about" data-aos="fade-up">
+            <div class="container">
+                <h2>Qui sommes-nous ?</h2>
+                <p>Le District Olave, est une entité territoriale de L'Association des Eclaireurs et Éclaireuses Évangéliques de Côte d'Ivoire, en abrégée AEEECI. Elle fonctionne sous la tutelle des entités que sont: LA DIVISION DE BOUAKÉ 1 & LA REGION SION. 
+
+Il s'agit donc d'un département scout, situé dans la ville de Bouaké et à caractère mixte. C'est à dire religieux et social. Son affiliation religieuse se fait principalement avec l'église Évangélique des Assemblées de Dieu à laquelle il appartient et avec qui il partage ses convictions, sa vision et l'essentiel de ses adhérants. Mais bien plus, le District Olave est une structure de prérogatives publique, communautaires et bénévole. Respectueux de son environnement et soucieux du développement de sa communauté, le Scout du District Olave est un Acteur Engagé dans la lutte pour l'atteinte du Développement durable et du développement sociocommunautaire.</p>
+            </div>
+        </section>
+
+        <section id="actualites" class="slider-container" data-aos="zoom-in">
+            <div class="container">
+                <h2>Nos Activités en Images</h2>
+                <div class="slider">
+                    <div class="slide active"><img src="add1.jpg" alt="Activité 1"></div>
+                    <div class="slide"><img src="add2.jpg" alt="Activité 2"></div>
+                    <div class="slide"><img src="add3.jpg" alt="Activité 3"></div>
+                    <div class="slide"><img src="add4.jpg" alt="Activité 4"></div>
+                    <div class="slide"><img src="add5.jpg" alt="Activité 5"></div>
+                    <div class="slide"><img src="promesse2025.jpg" alt="Promesse 2025"></div>
+                </div>
+                <button class="slider-btn prev">&lt;</button>
+                <button class="slider-btn next">&gt;</button>
+            </div>
+        </section>
+
+        <section id="mission" data-aos="fade-up">
+            <div class="container">
+                <h2>Notre Mission</h2>
+                <div class="mission-cards">
+                    <div class="card" data-aos="fade-up" data-aos-delay="100">
+                        <i class="fas fa-cubes fa-3x"></i>
+                        <h3>5-11 ans</h3>
+                        <p>Apprentissage par l'action et le jeu pour éveiller la curiosité et la créativité.</p>
+                    </div>
+                    <div class="card" data-aos="fade-up" data-aos-delay="200">
+                        <i class="fas fa-campground fa-3x"></i>
+                        <h3>12-17 ans</h3>
+                        <p>Éducation spirituelle, civique et communautaire pour forger des citoyens responsables.</p>
+                    </div>
+                    <div class="card" data-aos="fade-up" data-aos-delay="300">
+                        <i class="fas fa-user-tie fa-3x"></i>
+                        <h3>18-28 ans</h3>
+                        <p>Entrepreneuriat et initiation à la vie active pour un avenir durable.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 District Olave. Tous droits réservés. | <a href="admin.html" class="footer-link">Admin</a></p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
