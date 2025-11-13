@@ -1176,39 +1176,101 @@ footer {
     box-shadow: 0 8px 15px rgba(0,0,0,0.2);
 }
 
+/* Mobile Navigation Buttons */
+.hamburger-btn, .close-btn {
+    display: none; /* Hidden by default */
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    z-index: 1001; /* Ensure they are on top */
+}
+
 /* --- Responsive Design --- */
 @media (max-width: 768px) {
-    /* Header and Navigation */
-    header .container {
-        flex-direction: column;
-        gap: 1rem;
+    /* Show hamburger button */
+    .hamburger-btn {
+        display: block;
     }
 
-    header nav ul {
+    /* Style the mobile navigation panel */
+    #main-nav {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 80%;
+        max-width: 320px;
+        height: 100%;
+        background: var(--header-bg);
+        box-shadow: -2px 0 5px rgba(0,0,0,0.2);
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+        z-index: 1000;
+        display: flex;
         flex-direction: column;
-        align-items: center;
-        gap: 1rem;
+        padding-top: 4rem; /* Space for close button */
+    }
+
+    #main-nav.nav-active {
+        transform: translateX(0);
+    }
+
+    /* Style the navigation links for vertical layout */
+    #main-nav ul {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
         width: 100%;
     }
 
-    header nav li {
+    #main-nav li {
         width: 100%;
-        text-align: center;
+        text-align: left;
+        border-bottom: 1px solid var(--secondary-color);
     }
 
+    #main-nav li a {
+        display: block;
+        padding: 1rem 1.5rem;
+        font-size: 1.1rem;
+    }
+
+    /* Show close button inside the active nav panel */
+    #main-nav .close-btn {
+        display: block;
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        font-size: 2rem;
+    }
+
+    /* Handle dropdowns in mobile view */
     .dropdown-content {
-        position: static; /* Make dropdowns flow in document */
-        display: none; /* Keep them hidden until hover/focus */
-        background-color: #e9e9e9;
+        position: static;
+        display: none;
+        background-color: var(--secondary-color);
         box-shadow: none;
         width: 100%;
+        border-radius: 0;
+    }
+    
+    .dropdown-content a {
+        padding-left: 2.5rem; /* Indent sub-items */
     }
 
-    .dropdown:hover .dropdown-content {
-        display: block; /* This might need JS for a better mobile UX, but it's a start */
+    /* Use a class to toggle dropdown visibility with JS instead of hover */
+    .dropdown.open > .dropdown-content {
+        display: block;
+    }
+    
+    .dropdown > .dropbtn::after {
+        content: ' ▼';
+        font-size: 0.8rem;
+        float: right;
     }
 
-    /* Typography */
+    /* General Typography */
     h1, .logo-container h1 {
         font-size: 1.3rem;
     }

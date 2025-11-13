@@ -186,4 +186,37 @@ document.addEventListener('DOMContentLoaded', function() {
             contentElement.innerHTML = `<p>Veuillez sélectionner un groupe pour voir ses actualités.</p>`;
         }
     }
+
+    // Mobile Navigation
+    const handleMobileNav = () => {
+        const hamburgerBtn = document.querySelector('.hamburger-btn');
+        const closeBtn = document.querySelector('.close-btn');
+        const mainNav = document.getElementById('main-nav');
+        const dropdowns = document.querySelectorAll('#main-nav .dropdown > .dropbtn');
+
+        if (hamburgerBtn && mainNav && closeBtn) {
+            hamburgerBtn.addEventListener('click', () => {
+                mainNav.classList.add('nav-active');
+            });
+
+            closeBtn.addEventListener('click', () => {
+                mainNav.classList.remove('nav-active');
+            });
+        }
+        
+        if(dropdowns.length > 0) {
+            dropdowns.forEach(dropdownBtn => {
+                dropdownBtn.addEventListener('click', (e) => {
+                    // On mobile, prevent the link from navigating to allow the dropdown to open
+                    if (window.innerWidth <= 768) {
+                        e.preventDefault();
+                        const parentDropdown = dropdownBtn.parentElement;
+                        parentDropdown.classList.toggle('open');
+                    }
+                });
+            });
+        }
+    };
+
+    handleMobileNav();
 });
