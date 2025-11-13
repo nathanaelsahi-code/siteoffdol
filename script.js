@@ -193,6 +193,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const closeBtn = document.querySelector('.close-btn');
         const mainNav = document.getElementById('main-nav');
         const dropdowns = document.querySelectorAll('#main-nav .dropdown > .dropbtn');
+        const navLinks = document.querySelectorAll('#main-nav a'); // Select all links in the nav
 
         if (hamburgerBtn && mainNav && closeBtn) {
             hamburgerBtn.addEventListener('click', () => {
@@ -212,6 +213,23 @@ document.addEventListener('DOMContentLoaded', function() {
                         e.preventDefault();
                         const parentDropdown = dropdownBtn.parentElement;
                         parentDropdown.classList.toggle('open');
+                    }
+                });
+            });
+        }
+
+        // Close mobile menu when a navigation link is clicked
+        if (navLinks.length > 0 && mainNav) {
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    // Only close if the menu is actually open
+                    if (mainNav.classList.contains('nav-active')) {
+                        mainNav.classList.remove('nav-active');
+
+                        // Also close any open dropdowns
+                        document.querySelectorAll('#main-nav .dropdown.open').forEach(openDropdown => {
+                            openDropdown.classList.remove('open');
+                        });
                     }
                 });
             });
