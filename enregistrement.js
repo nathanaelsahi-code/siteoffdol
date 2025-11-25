@@ -1,6 +1,3 @@
-// Clear all previous registration data to reset counters
-localStorage.clear();
-
 document.addEventListener('DOMContentLoaded', function() {
 
     // Logic for the registration form page

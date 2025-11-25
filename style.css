@@ -1176,6 +1176,38 @@ footer {
     box-shadow: 0 8px 15px rgba(0,0,0,0.2);
 }
 
+/* Member Counts Statistics */
+.member-counts {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.member-counts h3 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+}
+
+.member-counts p {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+
+.member-counts p strong {
+    font-weight: 600;
+    color: #555;
+}
+
+.animated-counter {
+    display: inline-block;
+    min-width: 20px; /* Prevent layout shift */
+}
+
 /* Mobile Navigation Buttons */
 .hamburger-btn, .close-btn {
     display: none; /* Hidden by default */
